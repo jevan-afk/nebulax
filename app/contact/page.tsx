@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
@@ -10,6 +10,7 @@ import { contactContent, servicesDetailed } from "@/lib/content";
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -44,7 +45,7 @@ export default function ContactPage() {
 
       setStatus("success");
       setMessage("문의가 접수되었습니다. 빠르게 연락드리겠습니다.");
-      event.currentTarget.reset();
+      formRef.current?.reset();
     } catch (error) {
       setStatus("error");
       setMessage(
@@ -120,7 +121,7 @@ export default function ContactPage() {
                   서비스 상담과 기술 지원 문의를 남겨주시면 빠르게 연락드리겠습니다.
                 </p>
               </div>
-              <form className="grid gap-4" onSubmit={handleSubmit}>
+              <form ref={formRef} className="grid gap-4" onSubmit={handleSubmit}>
                 <div className="grid gap-4 md:grid-cols-2">
                   <label className="flex flex-col gap-2 text-sm text-ink-600">
                     이름

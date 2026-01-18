@@ -4,14 +4,14 @@ import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
 import { Button } from "@/components/Button";
-import { notices } from "@/lib/content";
+import { getNotice } from "@/lib/noticesStore";
 
 interface NoticePageProps {
   params: { slug: string };
 }
 
-export default function NoticeDetailPage({ params }: NoticePageProps) {
-  const notice = notices.find((item) => item.slug === params.slug);
+export default async function NoticeDetailPage({ params }: NoticePageProps) {
+  const notice = await getNotice(params.slug);
 
   if (!notice) {
     notFound();
