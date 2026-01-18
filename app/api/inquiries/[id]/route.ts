@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { replyToInquiry } from "@/lib/inquiriesStore";
 
+export const runtime = "nodejs";
+
 export async function PATCH(request: Request, context: { params: { id: string } }) {
   const body = await request.json();
   const { replyMessage, admin } = body ?? {};

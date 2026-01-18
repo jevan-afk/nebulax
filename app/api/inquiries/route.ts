@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { createInquiry, listInquiries } from "@/lib/inquiriesStore";
 
+export const runtime = "nodejs";
+
 export async function GET() {
   const inquiries = await listInquiries();
   return NextResponse.json({ inquiries });
