@@ -17,7 +17,7 @@ export function Button({ children, href, variant = "primary", className }: Butto
   };
 
   const classes = clsx(
-    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition",
+    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-900/60 focus-visible:ring-offset-2",
     styles[variant],
     className
   );

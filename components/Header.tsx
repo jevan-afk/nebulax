@@ -21,28 +21,24 @@ export function Header() {
     <header
       className={clsx(
         "sticky top-0 z-40 w-full transition",
-        isScrolled ? "bg-white/80 backdrop-blur border-b border-ink-100" : "bg-transparent"
+        isScrolled ? "bg-white/90 backdrop-blur border-b border-ink-100" : "bg-transparent"
       )}
     >
       <div className="mx-auto flex h-20 w-full max-w-container items-center justify-between px-6 lg:px-10">
         <Link href="/" className="text-lg font-semibold tracking-tight">
-          NebulaX
+          네뷸라엑스
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-medium text-ink-700 lg:flex">
-          <Link href="/about" className="link-underline">
-            About
-          </Link>
-          <Link href="/services" className="link-underline">
-            Services
-          </Link>
-          <Link href="/contact" className="link-underline">
-            Contact
-          </Link>
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="link-underline">
+              {link.label}
+            </Link>
+          ))}
           <Link
-            href="/contact"
+            href="/services"
             className="rounded-full border border-ink-200 px-4 py-2 text-ink-900 transition hover:border-ink-400"
           >
-            문의하기
+            클라우드 바로가기
           </Link>
         </nav>
         <button
@@ -67,7 +63,7 @@ export function Header() {
           )}
         >
           <div className="flex items-center justify-between">
-            <span className="text-base font-semibold">NebulaX</span>
+            <span className="text-base font-semibold">네뷸라엑스</span>
             <button
               type="button"
               className="rounded-full border border-ink-200 p-2"
@@ -84,10 +80,10 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/services"
               className="mt-4 inline-flex items-center justify-center rounded-full bg-ink-900 px-4 py-2 text-sm font-semibold text-white"
             >
-              상담하기
+              클라우드 바로가기
             </Link>
           </div>
         </div>

@@ -39,13 +39,14 @@ export function Hero() {
             <div className="space-y-6">
               <div className="rounded-2xl bg-white p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-500">
-                  NebulaX Status
+                  Global Network
                 </p>
                 <p className="mt-4 text-2xl font-semibold text-ink-900">
-                  지속 가능한 인프라 운영
+                  안정적인 인프라 운영
                 </p>
                 <p className="mt-3 text-sm text-ink-600">
-                  24/7 관제와 전담 엔지니어가 고객 시스템을 안전하게 보호합니다.
+                  전 세계 분산 인프라와 상시 모니터링으로 낮은 지연과 안정적인 성능을
+                  제공합니다.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-3">

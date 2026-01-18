@@ -12,11 +12,11 @@ export function InfoGrid() {
               NebulaX Advantage
             </p>
             <h2 className="text-3xl font-semibold text-ink-900 md:text-4xl">
-              운영 경험과 기술력으로 완성된 인프라
+              안정적인 기술 위에서 시작되는 비즈니스
             </h2>
             <p className="text-sm leading-relaxed text-ink-600">
-              NebulaX는 안정성을 최우선으로 하면서도 빠르게 확장할 수 있는 인프라 전략을
-              제공합니다.
+              NebulaX는 합리적인 비용과 글로벌 기술 지원으로 고객이 비즈니스에 집중할 수
+              있도록 돕습니다.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">

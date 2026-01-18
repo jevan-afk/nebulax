@@ -12,6 +12,12 @@
 
 body {
   @apply bg-white text-ink-900 antialiased;
+  font-feature-settings: "ss01", "ss02";
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 ::selection {

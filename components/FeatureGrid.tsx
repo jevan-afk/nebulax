@@ -10,21 +10,20 @@ export function FeatureGrid() {
   return (
     <Section>
       <Container>
-        <div className="mb-12 flex items-end justify-between gap-6">
+        <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-500">
               NebulaX Services
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-ink-900 md:text-4xl">
-              핵심 인프라 서비스를 한 곳에서
+              비즈니스에 꼭 맞는 인프라 서비스
             </h2>
           </div>
           <p className="max-w-md text-sm text-ink-600">
-            NebulaX는 클라우드부터 웹 구축까지 기업의 성장에 필요한 디지털 기반을 통합적으로
-            제공합니다.
+            합리적인 비용과 고품질 인프라로 클라우드, 데이터센터, 웹 구축을 지원합니다.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-3">
           {featuredCards.map((card, index) => (
             <motion.div
               key={card.title}

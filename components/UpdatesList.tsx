@@ -9,13 +9,13 @@ export function UpdatesList() {
       <Container>
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-500">Updates</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-500">Notice</p>
             <h2 className="mt-3 text-3xl font-semibold text-ink-900 md:text-4xl">
-              NebulaX 공지 및 업데이트
+              네뷸라엑스 공지사항
             </h2>
           </div>
           <p className="max-w-md text-sm text-ink-600">
-            최신 운영 소식과 서비스 업데이트를 공유합니다.
+            서비스 이용에 도움이 되는 정보를 안내합니다.
           </p>
         </div>
         <div className="grid gap-6 lg:grid-cols-3">

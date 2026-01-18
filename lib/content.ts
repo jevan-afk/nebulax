@@ -1,122 +1,110 @@
-import { Cpu, Globe2, ShieldCheck, Server, Sparkles, Users } from "lucide-react";
+import { Cloud, Globe2, Headset, Network, Server, ShieldCheck } from "lucide-react";
 
 export const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" }
+  { label: "회사소개", href: "/about" },
+  { label: "서비스", href: "/services" },
+  { label: "문의", href: "/contact" }
 ];
 
 export const heroContent = {
-  title: "NebulaX가 만드는 차세대 디지털 인프라",
+  title: "성공적인 비즈니스를 위한 가장 확실한 기술 파트너.",
   subtitle:
-    "클라우드, IDC, 보안, 웹 구축까지. NebulaX는 기업이 성장할 수 있도록 안정적인 서버와 스마트한 운영 환경을 제공합니다.",
-  primaryCta: "프로젝트 상담하기",
-  secondaryCta: "서비스 살펴보기",
-  highlight: "NebulaX Digital Infrastructure"
+    "우리는 단순한 서비스 회사가 아닙니다. 고객의 비즈니스를 함께 고민하고 성장의 모든 기술 여정을 책임지는 든든한 동반자가 되겠습니다.",
+  primaryCta: "서비스 상담하기",
+  secondaryCta: "클라우드 서비스 바로가기",
+  highlight: "NebulaX Corp."
 };
 
 export const featuredCards = [
   {
-    title: "클라우드 & 서버 운영",
-    description:
-      "확장 가능한 클라우드 인프라와 전담 운영팀으로 핵심 시스템을 안정적으로 운용합니다.",
+    title: "클라우드 플랫폼",
+    description: "월별 가격 모델과 맞춤형 솔루션을 고품질과 거품 없는 가격으로 제공합니다.",
+    icon: Cloud
+  },
+  {
+    title: "코로케이션",
+    description: "인터넷 서비스 공급자를 선택할 수 있는 통신사 중립 데이터 센터를 제공합니다.",
     icon: Server
   },
   {
-    title: "IDC & 하우징",
-    description:
-      "국내 IDC 기반의 고가용성 하우징 서비스를 통해 물리적 안정성과 보안까지 제공합니다.",
-    icon: ShieldCheck
-  },
-  {
-    title: "웹사이트 제작",
-    description:
-      "브랜드 스토리와 사용자 경험을 모두 담은 고성능 웹사이트를 설계합니다.",
+    title: "웹 사이트",
+    description: "회사나 가게에 꼭 필요한 홈페이지, 처음부터 끝까지 책임지고 만들어 드립니다.",
     icon: Globe2
-  },
-  {
-    title: "맞춤형 솔루션 개발",
-    description:
-      "비즈니스 요구에 맞춘 플랫폼과 자동화 시스템을 구축해 운영 효율을 높입니다.",
-    icon: Cpu
   }
 ];
 
 export const updates = [
   {
-    title: "NebulaX 클라우드 SLA 99.9% 보장 업데이트",
-    date: "2024.10",
-    description:
-      "고객 시스템의 안정성을 강화하기 위해 운영 모니터링과 백업 프로세스를 업그레이드했습니다.",
-    tag: "업데이트"
-  },
-  {
-    title: "IDC 신규 랙 확장 안내",
-    date: "2024.09",
-    description:
-      "대규모 트래픽 대응을 위한 신규 랙 확장 작업이 완료되었습니다.",
+    title: "클라우드 서비스를 찾으시나요?",
+    date: "바로가기",
+    description: "합리적인 비용의 클라우드 인프라로 비즈니스를 빠르게 시작하세요.",
     tag: "공지"
   },
   {
-    title: "웹 구축 패키지 리뉴얼",
-    date: "2024.08",
+    title: "글로벌 네트워크",
+    date: "24/7",
     description:
-      "NebulaX 웹 제작 패키지에 UX 컨설팅과 콘텐츠 전략을 포함했습니다.",
-    tag: "리뉴얼"
+      "전 세계 분산 인프라와 상시 모니터링으로 안정적인 성능과 낮은 지연을 유지합니다.",
+    tag: "안내"
+  },
+  {
+    title: "기술 지원",
+    date: "상시",
+    description: "언제든 연결 가능한 24/7 글로벌 기술 지원을 제공합니다.",
+    tag: "지원"
   }
 ];
 
 export const infoGrid = [
   {
-    title: "24/7 관제 및 대응",
-    description: "전담 엔지니어가 실시간으로 모니터링하고 빠르게 대응합니다."
+    title: "합리적인 비용의 클라우드 인프라",
+    description: "필요할 때 즉시 확장되는 유연한 클라우드 환경을 제공합니다."
   },
   {
-    title: "보안 인증 기반",
-    description: "국제 보안 기준에 맞춘 데이터 보호 체계를 운영합니다."
+    title: "24시간 전문가 기술 지원",
+    description: "언제든지 연결 가능한 글로벌 기술 지원팀이 함께합니다."
   },
   {
-    title: "유연한 확장성",
-    description: "성장 단계에 맞게 리소스를 즉시 확장할 수 있습니다."
+    title: "사업 성장에 따른 확장",
+    description: "비즈니스 규모에 맞춰 시스템을 유연하게 확장할 수 있습니다."
   },
   {
-    title: "고객 맞춤 컨설팅",
-    description: "사업 모델에 맞춘 인프라 설계를 함께 제안합니다."
+    title: "전 세계 분산 인프라",
+    description: "상시 모니터링으로 안정적인 성능을 유지합니다."
   },
   {
-    title: "브랜드 중심 제작",
-    description: "디자인부터 개발까지 일관된 브랜드 경험을 제공합니다."
+    title: "낮은 지연",
+    description: "글로벌 네트워크 기반의 빠른 응답 속도를 제공합니다."
   },
   {
-    title: "데이터 기반 운영",
-    description: "성능 분석과 리포트를 통해 지속적으로 개선합니다."
+    title: "안정적인 성능",
+    description: "보이지 않는 곳에서 비즈니스를 가장 튼튼하게 받쳐줍니다."
   }
 ];
 
 export const ctaContent = {
-  title: "NebulaX와 함께 성장할 준비가 되셨나요?",
+  title: "클라우드 서비스를 찾으시나요?",
   description:
-    "비즈니스 목표에 맞는 인프라 전략을 제안합니다. 지금 상담을 신청하세요.",
-  primary: "문의하기",
-  secondary: "서비스 자료 다운로드"
+    "지금 NebulaX와 함께 합리적인 비용과 안정적인 인프라를 경험해보세요.",
+  primary: "바로가기",
+  secondary: "문의하기"
 };
 
 export const footerLinks = [
   {
     title: "Company",
     links: [
-      { label: "NebulaX 소개", href: "/about" },
-      { label: "연혁", href: "/about#history" },
-      { label: "채용", href: "/about#careers" }
+      { label: "회사소개", href: "/about" },
+      { label: "사업자 정보", href: "/contact#business" },
+      { label: "공지사항", href: "/services#notice" }
     ]
   },
   {
     title: "Services",
     links: [
-      { label: "클라우드", href: "/services#cloud" },
-      { label: "IDC/하우징", href: "/services#idc" },
-      { label: "웹사이트 제작", href: "/services#web" },
-      { label: "보안/운영", href: "/services#security" }
+      { label: "클라우드 플랫폼", href: "/services#cloud" },
+      { label: "코로케이션", href: "/services#colocation" },
+      { label: "웹 사이트", href: "/services#website" }
     ]
   },
   {
@@ -124,61 +112,74 @@ export const footerLinks = [
     links: [
       { label: "문의", href: "/contact" },
       { label: "기술 지원", href: "/contact#support" },
-      { label: "자료실", href: "/contact#resources" }
+      { label: "대표번호", href: "tel:1644-2781" }
     ]
   }
 ];
 
 export const stats = [
-  { label: "운영 중인 인프라", value: "320+" },
-  { label: "고객 파트너", value: "180+" },
-  { label: "평균 가동률", value: "99.9%" }
+  { label: "글로벌 기술 지원", value: "24/7" },
+  { label: "확장 가능한 인프라", value: "즉시" },
+  { label: "안정적인 성능", value: "상시" }
 ];
 
 export const aboutContent = {
-  heading: "안정적인 인프라로 비즈니스의 확장을 돕습니다",
-  body: "NebulaX는 클라우드, IDC, 보안, 웹 구축 전 영역을 아우르는 디지털 인프라 파트너입니다. 기술과 사람을 연결하여 기업의 성장을 지속적으로 지원합니다."
+  heading: "비즈니스의 성공은 안정적인 기술 위에서 시작됩니다",
+  body: "네뷸라엑스는 보이지 않는 곳에서 고객의 비즈니스를 가장 튼튼하게 받쳐주는 기술 파트너입니다. 합리적인 비용의 클라우드 인프라, 24시간 든든한 전문가의 기술 지원, 그리고 사업 성장에 따라 유연하게 확장되는 시스템으로 고객이 오직 비즈니스에만 집중할 수 있도록 돕습니다."
 };
 
 export const serviceHighlights = [
   {
-    title: "클라우드 매니지드",
-    description: "설계부터 운영까지 전담팀이 관리하는 클라우드 서비스."
+    title: "글로벌 네트워크",
+    description: "전 세계 분산 인프라와 상시 모니터링으로 안정적인 성능과 낮은 지연을 유지합니다.",
+    icon: Network
   },
   {
-    title: "IDC/하우징",
-    description: "국내 주요 IDC 인프라와 직결된 안정적인 하우징 환경."
+    title: "24/7 기술 지원",
+    description: "언제든 연결 가능한 글로벌 기술 지원을 제공합니다.",
+    icon: Headset
   },
   {
-    title: "웹 & 플랫폼 구축",
-    description: "브랜드 경험을 살리는 UX 중심 웹사이트 제작."
+    title: "안정적인 보안 운영",
+    description: "비즈니스 핵심 데이터를 보호하기 위한 보안 운영을 제공합니다.",
+    icon: ShieldCheck
   }
 ];
 
 export const contactContent = {
-  heading: "프로젝트 상담 및 문의",
-  body: "NebulaX는 언제든지 상담을 환영합니다. 아래 채널로 문의 주세요.",
+  heading: "네뷸라엑스에 문의하세요",
+  body: "서비스 상담, 클라우드 인프라, 웹 구축까지 NebulaX가 함께합니다.",
   items: [
-    { label: "이메일", value: "contact@nebulax.digital" },
-    { label: "대표 전화", value: "+82 2-0000-0000" },
-    { label: "주소", value: "서울시 강남구 테헤란로 000" }
+    { label: "회사명", value: "네뷸라엑스 주식회사" },
+    { label: "사업자등록번호", value: "257-81-03903" },
+    { label: "주소", value: "대전광역시 유성구 장대로 106, 2층 J182호" },
+    { label: "대표번호", value: "1644-2781" },
+    { label: "이메일", value: "contact@nebulax.digital" }
   ]
 };
 
 export const values = [
   {
-    title: "Reliability",
-    description: "항상 안정적인 서비스를 제공하기 위한 무중단 운영 체계를 구축합니다.",
+    title: "기술 파트너십",
+    description: "고객의 비즈니스 목표를 함께 고민하는 파트너로서 함께합니다.",
     icon: ShieldCheck
   },
   {
-    title: "Expertise",
-    description: "다양한 산업 경험을 바탕으로 맞춤형 인프라를 설계합니다.",
-    icon: Users
+    title: "유연한 확장",
+    description: "필요할 때 바로 확장 가능한 인프라로 성장 속도를 지원합니다.",
+    icon: Network
   },
   {
-    title: "Innovation",
-    description: "최신 기술을 빠르게 적용해 고객의 경쟁력을 높입니다.",
-    icon: Sparkles
+    title: "24시간 지원",
+    description: "글로벌 기술 지원팀이 언제든지 대응합니다.",
+    icon: Headset
   }
 ];
+
+export const businessInfo = {
+  company: "네뷸라엑스 주식회사",
+  registration: "257-81-03903",
+  address: "대전광역시 유성구 장대로 106, 2층 J182호",
+  phone: "1644-2781",
+  trademark: "Contell:DC is a registered trademark of NebulaX, Corp."
+};
