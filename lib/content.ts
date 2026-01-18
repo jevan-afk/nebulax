@@ -1,18 +1,42 @@
-import { Cloud, Globe2, Headset, Network, Server, ShieldCheck } from "lucide-react";
+import {
+  ArrowUpRight,
+  Cloud,
+  Globe2,
+  Headset,
+  Network,
+  Server,
+  ShieldCheck
+} from "lucide-react";
 
 export const navLinks = [
   { label: "회사소개", href: "/about" },
   { label: "서비스", href: "/services" },
+  { label: "공지사항", href: "/services#notice" },
   { label: "문의", href: "/contact" }
 ];
 
 export const heroContent = {
   title: "성공적인 비즈니스를 위한 가장 확실한 기술 파트너.",
   subtitle:
-    "우리는 단순한 서비스 회사가 아닙니다. 고객의 비즈니스를 함께 고민하고 성장의 모든 기술 여정을 책임지는 든든한 동반자가 되겠습니다.",
+    "우리는 단순한 서비스 회사가 아닙니다. 고객의 비즈니스를 함께 고민하고, 성장의 모든 기술 여정을 책임지는 든든한 동반자가 되겠습니다.",
   primaryCta: "서비스 상담하기",
   secondaryCta: "클라우드 서비스 바로가기",
-  highlight: "NebulaX Corp."
+  highlight: "NebulaX Corp.",
+  promo: {
+    title: "클라우드 서비스를 찾으시나요?",
+    action: "바로가기"
+  }
+};
+
+export const missionContent = {
+  title: "비즈니스의 성공은 안정적인 기술 위에서 시작됩니다.",
+  body: "네뷸라엑스는 보이지 않는 곳에서 고객의 비즈니스를 가장 튼튼하게 받쳐주는 기술 파트너입니다. 합리적인 비용의 클라우드 인프라, 24시간 든든한 전문가의 기술 지원, 그리고 사업 성장에 따라 유연하게 확장되는 시스템을 통해 고객이 오직 비즈니스에만 집중할 수 있도록 돕습니다."
+};
+
+export const serviceIntro = {
+  title: "서비스",
+  description:
+    "합리적인 비용으로 시작해 필요할 때 즉시 확장되는 클라우드 인프라와, 언제든 연결 가능한 24/7 글로벌 기술 지원을 제공합니다. 전 세계 분산 인프라와 상시 모니터링으로 안정적인 성능과 낮은 지연을 유지합니다."
 };
 
 export const featuredCards = [
@@ -82,12 +106,23 @@ export const infoGrid = [
   }
 ];
 
+export const globalNetwork = {
+  title: "글로벌 네트워크",
+  description:
+    "합리적인 비용으로 시작해 필요할 때 즉시 확장되는 클라우드 인프라와, 언제든 연결 가능한 24/7 글로벌 기술 지원을 제공합니다. 전 세계 분산 인프라와 상시 모니터링으로 안정적인 성능과 낮은 지연을 유지합니다.",
+  stats: [
+    { label: "상시 모니터링", value: "24/7" },
+    { label: "유연한 확장", value: "즉시" },
+    { label: "안정적인 성능", value: "상시" }
+  ]
+};
+
 export const ctaContent = {
   title: "클라우드 서비스를 찾으시나요?",
-  description:
-    "지금 NebulaX와 함께 합리적인 비용과 안정적인 인프라를 경험해보세요.",
+  description: "지금 NebulaX와 함께 합리적인 비용과 안정적인 인프라를 경험해보세요.",
   primary: "바로가기",
-  secondary: "문의하기"
+  secondary: "문의하기",
+  icon: ArrowUpRight
 };
 
 export const footerLinks = [
@@ -115,12 +150,6 @@ export const footerLinks = [
       { label: "대표번호", href: "tel:1644-2781" }
     ]
   }
-];
-
-export const stats = [
-  { label: "글로벌 기술 지원", value: "24/7" },
-  { label: "확장 가능한 인프라", value: "즉시" },
-  { label: "안정적인 성능", value: "상시" }
 ];
 
 export const aboutContent = {

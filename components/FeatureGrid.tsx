@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { featuredCards } from "@/lib/content";
+import { featuredCards, serviceIntro } from "@/lib/content";
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
@@ -16,11 +16,11 @@ export function FeatureGrid() {
               NebulaX Services
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-ink-900 md:text-4xl">
-              비즈니스에 꼭 맞는 인프라 서비스
+              {serviceIntro.title}
             </h2>
           </div>
           <p className="max-w-md text-sm text-ink-600">
-            합리적인 비용과 고품질 인프라로 클라우드, 데이터센터, 웹 구축을 지원합니다.
+            {serviceIntro.description}
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">

@@ -1,7 +1,7 @@
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
-import { featuredCards, serviceHighlights, updates } from "@/lib/content";
+import { featuredCards, serviceHighlights, serviceIntro, updates } from "@/lib/content";
 
 export default function ServicesPage() {
   const serviceAnchors = ["cloud", "colocation", "website"];
@@ -13,11 +13,10 @@ export default function ServicesPage() {
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-500">Services</p>
             <h1 className="text-4xl font-semibold text-ink-900 md:text-5xl">
-              NebulaX 서비스 포트폴리오
+              클라우드 서비스를 찾으시나요?
             </h1>
             <p className="max-w-2xl text-lg leading-relaxed text-ink-600">
-              클라우드 매니지드부터 웹 구축까지, NebulaX는 안정적이고 확장 가능한 디지털 인프라를
-              제공합니다.
+              {serviceIntro.description}
             </p>
           </div>
         </Container>

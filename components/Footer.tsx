@@ -13,6 +13,7 @@ export function Footer() {
               최적의 파트너입니다.
             </p>
             <div className="space-y-1 text-xs text-ink-500">
+              <p>{businessInfo.company}</p>
               <p>사업자등록번호: {businessInfo.registration}</p>
               <p>주소: {businessInfo.address}</p>
               <p>대표번호: {businessInfo.phone}</p>

@@ -17,8 +17,11 @@ export function CTASection() {
               <p className="mt-4 text-sm leading-relaxed text-white/70">{ctaContent.description}</p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Button href="/services" className="bg-white text-ink-900 hover:bg-ink-100">
-                {ctaContent.primary}
+              <Button href="/services#cloud" className="bg-white text-ink-900 hover:bg-ink-100">
+                <span className="flex items-center gap-2">
+                  {ctaContent.primary}
+                  <ctaContent.icon className="h-4 w-4" />
+                </span>
               </Button>
               <Button href="/contact" variant="ghost" className="border border-white/30 text-white">
                 {ctaContent.secondary}

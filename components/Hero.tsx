@@ -9,6 +9,13 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden pt-24 pb-16 md:pb-24">
       <div className="mx-auto w-full max-w-container px-6 lg:px-10">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4 rounded-full border border-ink-100 bg-white/80 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-ink-500">
+          <span>{heroContent.promo.title}</span>
+          <a href="/services#cloud" className="flex items-center gap-2 text-ink-900">
+            {heroContent.promo.action}
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -25,7 +32,7 @@ export function Hero() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="/contact">{heroContent.primaryCta}</Button>
-              <Button href="/services" variant="secondary">
+              <Button href="/services#cloud" variant="secondary">
                 {heroContent.secondaryCta}
               </Button>
             </div>

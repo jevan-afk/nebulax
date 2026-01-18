@@ -29,13 +29,36 @@ export function Header() {
           네뷸라엑스
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-medium text-ink-700 lg:flex">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="link-underline">
-              {link.label}
+          <div className="group relative">
+            <Link href="/services" className="link-underline">
+              서비스
             </Link>
-          ))}
+            <div className="invisible absolute left-0 top-full z-40 w-72 translate-y-2 rounded-2xl border border-ink-100 bg-white p-5 opacity-0 shadow-card transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-500">
+                Services
+              </p>
+              <div className="mt-4 space-y-3 text-sm text-ink-700">
+                <Link href="/services#cloud" className="flex items-center justify-between">
+                  클라우드 플랫폼 <span className="text-ink-400">→</span>
+                </Link>
+                <Link href="/services#colocation" className="flex items-center justify-between">
+                  코로케이션 <span className="text-ink-400">→</span>
+                </Link>
+                <Link href="/services#website" className="flex items-center justify-between">
+                  웹 사이트 <span className="text-ink-400">→</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+          {navLinks
+            .filter((link) => link.label !== "서비스")
+            .map((link) => (
+              <Link key={link.href} href={link.href} className="link-underline">
+                {link.label}
+              </Link>
+            ))}
           <Link
-            href="/services"
+            href="/services#cloud"
             className="rounded-full border border-ink-200 px-4 py-2 text-ink-900 transition hover:border-ink-400"
           >
             클라우드 바로가기

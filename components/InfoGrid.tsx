@@ -1,4 +1,4 @@
-import { infoGrid } from "@/lib/content";
+import { globalNetwork, infoGrid } from "@/lib/content";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 
@@ -12,12 +12,19 @@ export function InfoGrid() {
               NebulaX Advantage
             </p>
             <h2 className="text-3xl font-semibold text-ink-900 md:text-4xl">
-              안정적인 기술 위에서 시작되는 비즈니스
+              {globalNetwork.title}
             </h2>
             <p className="text-sm leading-relaxed text-ink-600">
-              NebulaX는 합리적인 비용과 글로벌 기술 지원으로 고객이 비즈니스에 집중할 수
-              있도록 돕습니다.
+              {globalNetwork.description}
             </p>
+            <div className="grid gap-4 pt-4 sm:grid-cols-3">
+              {globalNetwork.stats.map((stat) => (
+                <div key={stat.label} className="rounded-2xl bg-ink-100/70 p-4 text-center">
+                  <p className="text-xl font-semibold text-ink-900">{stat.value}</p>
+                  <p className="mt-2 text-xs text-ink-500">{stat.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
             {infoGrid.map((item) => (
