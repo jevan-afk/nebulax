@@ -11,7 +11,7 @@ import {
 export const navLinks = [
   { label: "회사소개", href: "/about" },
   { label: "서비스", href: "/services" },
-  { label: "공지사항", href: "/services#notice" },
+  { label: "공지사항", href: "/notices" },
   { label: "문의", href: "/contact" }
 ];
 
@@ -32,6 +32,21 @@ export const missionContent = {
   title: "비즈니스의 성공은 안정적인 기술 위에서 시작됩니다.",
   body: "네뷸라엑스는 보이지 않는 곳에서 고객의 비즈니스를 가장 튼튼하게 받쳐주는 기술 파트너입니다. 합리적인 비용의 클라우드 인프라, 24시간 든든한 전문가의 기술 지원, 그리고 사업 성장에 따라 유연하게 확장되는 시스템을 통해 고객이 오직 비즈니스에만 집중할 수 있도록 돕습니다."
 };
+
+export const processSteps = [
+  {
+    title: "상담 및 진단",
+    description: "요구사항을 분석하고 현재 인프라 환경을 진단합니다."
+  },
+  {
+    title: "설계 및 구축",
+    description: "비즈니스 규모에 맞춰 클라우드·IDC·웹 구축 전략을 설계합니다."
+  },
+  {
+    title: "운영 및 지원",
+    description: "24/7 모니터링과 기술 지원으로 안정적인 운영을 돕습니다."
+  }
+];
 
 export const serviceIntro = {
   title: "서비스",
@@ -93,27 +108,51 @@ export const serviceDetails = [
   }
 ];
 
-export const updates = [
+export const notices = [
   {
+    slug: "cloud-start-guide",
     title: "클라우드 서비스를 찾으시나요?",
-    date: "바로가기",
+    date: "2024.10.18",
     description: "합리적인 비용의 클라우드 인프라로 비즈니스를 빠르게 시작하세요.",
-    tag: "공지"
+    tag: "공지",
+    author: "NebulaX 운영팀",
+    content:
+      "합리적인 비용으로 시작할 수 있는 NebulaX 클라우드 플랫폼 안내입니다. 월별 과금 모델, 확장 옵션, 운영 지원 범위를 확인하고 문의하시면 맞춤형 견적을 제공해드립니다."
   },
   {
-    title: "글로벌 네트워크",
-    date: "24/7",
+    slug: "global-network-update",
+    title: "글로벌 네트워크 운영 업데이트",
+    date: "2024.09.30",
     description:
       "전 세계 분산 인프라와 상시 모니터링으로 안정적인 성능과 낮은 지연을 유지합니다.",
-    tag: "안내"
+    tag: "안내",
+    author: "NebulaX 인프라팀",
+    content:
+      "글로벌 네트워크 구간에 대한 모니터링 범위를 확장했습니다. 주요 노드 상태, 응답 속도, 장애 감지 정책을 강화하여 안정적인 성능을 제공합니다."
   },
   {
-    title: "기술 지원",
-    date: "상시",
+    slug: "support-availability",
+    title: "24/7 기술 지원 안내",
+    date: "2024.09.12",
     description: "언제든 연결 가능한 24/7 글로벌 기술 지원을 제공합니다.",
-    tag: "지원"
+    tag: "지원",
+    author: "NebulaX 고객지원",
+    content:
+      "NebulaX는 24시간 상시 대응 체계를 운영합니다. 장애 대응 및 기술 문의는 대표번호 또는 이메일로 접수해 주세요."
+  },
+  {
+    slug: "website-build-package",
+    title: "웹사이트 구축 패키지 업데이트",
+    date: "2024.08.21",
+    description: "브랜드 맞춤 UX/UI와 콘텐츠 기획이 포함된 웹 구축 패키지를 제공합니다.",
+    tag: "업데이트",
+    author: "NebulaX 웹팀",
+    content:
+      "웹사이트 구축 패키지에 콘텐츠 전략 수립과 운영 가이드를 포함했습니다. 프로젝트 규모에 따른 일정과 예산 상담도 지원합니다."
   }
 ];
+
+export const updates = notices.slice(0, 3);
 
 export const infoGrid = [
   {
@@ -169,7 +208,7 @@ export const footerLinks = [
     links: [
       { label: "회사소개", href: "/about" },
       { label: "사업자 정보", href: "/contact#business" },
-      { label: "공지사항", href: "/services#notice" }
+      { label: "공지사항", href: "/notices" }
     ]
   },
   {
