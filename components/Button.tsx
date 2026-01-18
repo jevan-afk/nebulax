@@ -1,0 +1,51 @@
+"use client";
+
+import Link from "next/link";
+import clsx from "clsx";
+import { ReactNode } from "react";
+
+interface ButtonProps {
+  children: ReactNode;
+  href?: string;
+  variant?: "primary" | "secondary" | "ghost";
+  className?: string;
+  disabled?: boolean;
+  type?: "button" | "submit";
+  onClick?: () => void;
+}
+
+export function Button({
+  children,
+  href,
+  variant = "primary",
+  className,
+  disabled,
+  type,
+  onClick
+}: ButtonProps) {
+  const styles = {
+    primary: "bg-ink-900 text-white hover:bg-ink-800",
+    secondary: "bg-white text-ink-900 border border-ink-200 hover:border-ink-400",
+    ghost: "bg-transparent text-ink-900 hover:bg-ink-100"
+  };
+
+  const classes = clsx(
+    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-900/60 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60",
+    styles[variant],
+    className
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <button className={classes} disabled={disabled} type={type} onClick={onClick}>
+      {children}
+    </button>
+  );
+}
