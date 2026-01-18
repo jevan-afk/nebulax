@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { navLinks } from "@/lib/content";
+import { navLinks, serviceCategories } from "@/lib/content";
 import clsx from "clsx";
 
 export function Header() {
@@ -33,20 +33,20 @@ export function Header() {
             <Link href="/services" className="link-underline">
               서비스
             </Link>
-            <div className="invisible absolute left-0 top-full z-40 w-72 translate-y-2 rounded-2xl border border-ink-100 bg-white p-5 opacity-0 shadow-card transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="invisible absolute left-0 top-full z-40 w-[340px] translate-y-2 rounded-2xl border border-ink-100 bg-white p-5 opacity-0 shadow-card transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-500">
                 Services
               </p>
               <div className="mt-4 space-y-3 text-sm text-ink-700">
-                <Link href="/services#cloud" className="flex items-center justify-between">
-                  클라우드 플랫폼 <span className="text-ink-400">→</span>
-                </Link>
-                <Link href="/services#colocation" className="flex items-center justify-between">
-                  코로케이션 <span className="text-ink-400">→</span>
-                </Link>
-                <Link href="/services#website" className="flex items-center justify-between">
-                  웹 사이트 <span className="text-ink-400">→</span>
-                </Link>
+                {serviceCategories.map((service) => (
+                  <Link
+                    key={service.id}
+                    href={`/services#${service.id}`}
+                    className="flex items-center justify-between"
+                  >
+                    {service.title} <span className="text-ink-400">→</span>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

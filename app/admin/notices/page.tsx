@@ -26,6 +26,7 @@ export default function NoticeAdminPage() {
                 <li>• 공지 유형과 게시 날짜를 함께 입력합니다.</li>
                 <li>• 요약 문구는 목록에서 노출됩니다.</li>
                 <li>• 본문은 상세 페이지에 노출됩니다.</li>
+                <li>• 관련 링크가 있다면 함께 입력합니다.</li>
               </ul>
             </Card>
           </div>
@@ -49,13 +50,17 @@ export default function NoticeAdminPage() {
                 </label>
                 <label className="flex flex-col gap-2 text-sm text-ink-600">
                   카테고리
-                  <input
-                    type="text"
+                  <select
                     name="tag"
-                    placeholder="공지/안내/업데이트"
+                    defaultValue="공지"
                     className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
                     required
-                  />
+                  >
+                    <option value="공지">공지</option>
+                    <option value="안내">안내</option>
+                    <option value="업데이트">업데이트</option>
+                    <option value="점검">점검</option>
+                  </select>
                 </label>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
@@ -97,6 +102,15 @@ export default function NoticeAdminPage() {
                   placeholder="공지 상세 내용을 입력하세요"
                   className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
                   required
+                />
+              </label>
+              <label className="flex flex-col gap-2 text-sm text-ink-600">
+                관련 링크
+                <input
+                  type="url"
+                  name="link"
+                  placeholder="https://"
+                  className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
                 />
               </label>
               <Button className="w-full">공지사항 등록</Button>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
+import { Button } from "@/components/Button";
 import { notices } from "@/lib/content";
 
 export default function NoticesPage() {
@@ -16,9 +17,14 @@ export default function NoticesPage() {
                 공지사항
               </h1>
             </div>
-            <p className="max-w-md text-sm text-ink-600">
-              NebulaX의 서비스 업데이트와 운영 소식을 확인하세요.
-            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <p className="max-w-md text-sm text-ink-600">
+                NebulaX의 서비스 업데이트와 운영 소식을 확인하세요.
+              </p>
+              <Button href="/admin/notices" variant="secondary">
+                공지 작성
+              </Button>
+            </div>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
             {notices.map((notice) => (

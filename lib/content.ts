@@ -5,7 +5,13 @@ import {
   Headset,
   Network,
   Server,
-  ShieldCheck
+  ShieldCheck,
+  Cpu,
+  Database,
+  Settings,
+  Building2,
+  LifeBuoy,
+  MonitorCheck
 } from "lucide-react";
 
 export const navLinks = [
@@ -72,6 +78,85 @@ export const featuredCards = [
   }
 ];
 
+export const serviceCategories = [
+  {
+    id: "cloud",
+    title: "클라우드 플랫폼",
+    description:
+      "유연한 확장과 월별 과금 모델로 시작 부담을 낮춘 클라우드 서비스를 제공합니다.",
+    icon: Cloud,
+    offerings: [
+      "퍼블릭/프라이빗 클라우드 구축",
+      "가상 서버, 스토리지, 네트워크",
+      "백업·DR 구성",
+      "사용량 기반 과금 컨설팅"
+    ]
+  },
+  {
+    id: "colocation",
+    title: "코로케이션 (IDC)",
+    description:
+      "통신사 중립 데이터 센터에서 안정적인 전력·네트워크 환경을 제공합니다.",
+    icon: Building2,
+    offerings: [
+      "랙·케이지 단위 상면 제공",
+      "상시 온습도·전력 모니터링",
+      "보안 출입 통제",
+      "원격 Hands 지원"
+    ]
+  },
+  {
+    id: "network",
+    title: "네트워크 & 회선",
+    description: "글로벌 네트워크 기반의 낮은 지연과 안정적인 전송 품질을 지원합니다.",
+    icon: Network,
+    offerings: [
+      "전용 회선 및 VPN 구성",
+      "로드밸런싱/트래픽 최적화",
+      "네트워크 설계 및 장애 대응",
+      "다중 회선 이중화"
+    ]
+  },
+  {
+    id: "managed",
+    title: "매니지드 운영",
+    description:
+      "24/7 모니터링과 전문가 운영 지원으로 시스템 안정성을 확보합니다.",
+    icon: MonitorCheck,
+    offerings: [
+      "24시간 모니터링",
+      "장애 대응 및 리포팅",
+      "보안 패치 및 유지보수",
+      "운영 자동화 컨설팅"
+    ]
+  },
+  {
+    id: "security",
+    title: "보안 서비스",
+    description: "보안 위협에 대비한 대응 체계와 운영 가이드를 제공합니다.",
+    icon: ShieldCheck,
+    offerings: [
+      "보안 정책 수립",
+      "취약점 점검",
+      "접근 제어 및 로그 관리",
+      "보안 운영 교육"
+    ]
+  },
+  {
+    id: "website",
+    title: "웹사이트 구축",
+    description:
+      "브랜드 톤에 맞춘 UX/UI 설계부터 제작·운영까지 책임집니다.",
+    icon: Globe2,
+    offerings: [
+      "맞춤형 웹/모바일 UX 설계",
+      "반응형 웹 구축",
+      "콘텐츠 구성 및 제작",
+      "운영 가이드 및 유지보수"
+    ]
+  }
+];
+
 export const serviceDetails = [
   {
     id: "cloud",
@@ -81,7 +166,8 @@ export const serviceDetails = [
     points: [
       "합리적인 비용의 클라우드 인프라",
       "필요 시 즉시 확장 가능한 리소스",
-      "상시 모니터링으로 안정적인 성능 유지"
+      "상시 모니터링으로 안정적인 성능 유지",
+      "데이터 백업 및 DR 설계 지원"
     ]
   },
   {
@@ -92,7 +178,32 @@ export const serviceDetails = [
     points: [
       "통신사 선택이 가능한 중립 IDC",
       "24/7 상주 인프라 관리",
-      "보안·온도·전력 모니터링"
+      "보안·온도·전력 모니터링",
+      "원격 장애 대응 서비스"
+    ]
+  },
+  {
+    id: "network",
+    title: "네트워크 & 회선",
+    description:
+      "글로벌 네트워크 기반의 연결을 통해 안정적인 통신 환경과 저지연 성능을 제공합니다.",
+    points: [
+      "전용 회선 및 VPN 구축",
+      "트래픽 분산 및 로드밸런싱",
+      "다중 회선 이중화",
+      "네트워크 장애 대응"
+    ]
+  },
+  {
+    id: "managed",
+    title: "매니지드 운영",
+    description:
+      "24시간 모니터링과 전문가 지원으로 고객 시스템을 안정적으로 운영합니다.",
+    points: [
+      "24/7 모니터링",
+      "장애 대응 및 정기 리포팅",
+      "보안 패치 운영",
+      "운영 자동화 컨설팅"
     ]
   },
   {
@@ -103,8 +214,32 @@ export const serviceDetails = [
     points: [
       "브랜드 톤에 맞춘 UX/UI 설계",
       "콘텐츠 구성 및 반응형 구축",
-      "운영 편의를 위한 관리 가이드"
+      "운영 편의를 위한 관리 가이드",
+      "운영 대행 및 유지보수"
     ]
+  }
+];
+
+export const serviceStacks = [
+  {
+    title: "인프라 구성",
+    description: "Cloud, IDC, Network 기반의 안정적 인프라 설계",
+    icon: Cpu
+  },
+  {
+    title: "데이터 운영",
+    description: "백업, 스토리지, DB 운영 최적화",
+    icon: Database
+  },
+  {
+    title: "운영 자동화",
+    description: "모니터링과 운영 자동화를 통한 효율 개선",
+    icon: Settings
+  },
+  {
+    title: "지원 체계",
+    description: "24/7 기술 지원 및 긴급 대응",
+    icon: LifeBuoy
   }
 ];
 
@@ -216,6 +351,8 @@ export const footerLinks = [
     links: [
       { label: "클라우드 플랫폼", href: "/services#cloud" },
       { label: "코로케이션", href: "/services#colocation" },
+      { label: "네트워크", href: "/services#network" },
+      { label: "매니지드 운영", href: "/services#managed" },
       { label: "웹 사이트", href: "/services#website" }
     ]
   },
@@ -233,6 +370,21 @@ export const aboutContent = {
   heading: "비즈니스의 성공은 안정적인 기술 위에서 시작됩니다",
   body: "네뷸라엑스는 보이지 않는 곳에서 고객의 비즈니스를 가장 튼튼하게 받쳐주는 기술 파트너입니다. 합리적인 비용의 클라우드 인프라, 24시간 든든한 전문가의 기술 지원, 그리고 사업 성장에 따라 유연하게 확장되는 시스템으로 고객이 오직 비즈니스에만 집중할 수 있도록 돕습니다."
 };
+
+export const aboutHighlights = [
+  {
+    title: "기술 중심 파트너십",
+    description: "고객 비즈니스 목표를 함께 고민하며 전략을 설계합니다."
+  },
+  {
+    title: "신뢰 가능한 운영",
+    description: "인프라 안정성과 보안을 최우선으로 운영합니다."
+  },
+  {
+    title: "유연한 확장",
+    description: "성장 속도에 맞춘 유연한 확장 옵션을 제공합니다."
+  }
+];
 
 export const serviceHighlights = [
   {
@@ -263,6 +415,14 @@ export const contactContent = {
     { label: "이메일", value: "contact@nebulax.digital" }
   ]
 };
+
+export const contactTopics = [
+  "클라우드/IDC 상담",
+  "네트워크/회선 문의",
+  "웹사이트 제작",
+  "운영/보안 컨설팅",
+  "기타 문의"
+];
 
 export const values = [
   {

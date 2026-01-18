@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { updates } from "@/lib/content";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
@@ -14,9 +15,14 @@ export function UpdatesList() {
               네뷸라엑스 공지사항
             </h2>
           </div>
-          <p className="max-w-md text-sm text-ink-600">
-            서비스 이용에 도움이 되는 정보를 안내합니다.
-          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <p className="max-w-md text-sm text-ink-600">
+              서비스 이용에 도움이 되는 정보를 안내합니다.
+            </p>
+            <Link href="/notices" className="text-sm font-semibold text-ink-900 link-underline">
+              공지 전체 보기
+            </Link>
+          </div>
         </div>
         <div className="grid gap-6 lg:grid-cols-3">
           {updates.map((update) => (

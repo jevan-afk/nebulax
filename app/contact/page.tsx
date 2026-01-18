@@ -2,7 +2,7 @@ import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
 import { Button } from "@/components/Button";
-import { contactContent } from "@/lib/content";
+import { contactContent, contactTopics } from "@/lib/content";
 
 export default function ContactPage() {
   return (
@@ -72,6 +72,18 @@ export default function ContactPage() {
                     />
                   </label>
                   <label className="flex flex-col gap-2 text-sm text-ink-600">
+                    회사명
+                    <input
+                      type="text"
+                      name="company"
+                      placeholder="회사 또는 조직명"
+                      className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
+                      required
+                    />
+                  </label>
+                </div>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <label className="flex flex-col gap-2 text-sm text-ink-600">
                     연락처
                     <input
                       type="tel"
@@ -81,16 +93,34 @@ export default function ContactPage() {
                       required
                     />
                   </label>
+                  <label className="flex flex-col gap-2 text-sm text-ink-600">
+                    이메일
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="name@company.com"
+                      className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
+                      required
+                    />
+                  </label>
                 </div>
                 <label className="flex flex-col gap-2 text-sm text-ink-600">
-                  이메일
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="name@company.com"
+                  문의 분야
+                  <select
+                    name="topic"
+                    defaultValue=""
                     className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
                     required
-                  />
+                  >
+                    <option value="" disabled>
+                      문의 분야를 선택해주세요
+                    </option>
+                    {contactTopics.map((topic) => (
+                      <option key={topic} value={topic}>
+                        {topic}
+                      </option>
+                    ))}
+                  </select>
                 </label>
                 <label className="flex flex-col gap-2 text-sm text-ink-600">
                   문의 내용
