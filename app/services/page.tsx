@@ -1,7 +1,13 @@
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
-import { featuredCards, serviceHighlights, serviceIntro, updates } from "@/lib/content";
+import {
+  featuredCards,
+  serviceDetails,
+  serviceHighlights,
+  serviceIntro,
+  updates
+} from "@/lib/content";
 
 export default function ServicesPage() {
   const serviceAnchors = ["cloud", "colocation", "website"];
@@ -36,7 +42,7 @@ export default function ServicesPage() {
           </div>
         </Container>
       </Section>
-      <Section className="bg-ink-100/50" id="cloud">
+      <Section className="bg-ink-100/50">
         <Container>
           <div className="grid gap-6 md:grid-cols-3">
             {featuredCards.map((card, index) => (
@@ -45,6 +51,44 @@ export default function ServicesPage() {
                 <p className="text-sm leading-relaxed text-ink-600">{card.description}</p>
               </Card>
             ))}
+          </div>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-500">
+                Service Detail
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold text-ink-900 md:text-4xl">
+                NebulaX 서비스 상세
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-ink-600">
+                각 서비스별 핵심 기능과 운영 포인트를 확인하세요.
+              </p>
+            </div>
+            <div className="grid gap-6">
+              {serviceDetails.map((service) => (
+                <Card key={service.id} className="space-y-4" id={service.id}>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold text-ink-900">{service.title}</h3>
+                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-400">
+                      Detail
+                    </span>
+                  </div>
+                  <p className="text-sm leading-relaxed text-ink-600">{service.description}</p>
+                  <ul className="grid gap-2 text-sm text-ink-600 sm:grid-cols-2">
+                    {service.points.map((point) => (
+                      <li key={point} className="flex items-start gap-2">
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-ink-400" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              ))}
+            </div>
           </div>
         </Container>
       </Section>

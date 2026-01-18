@@ -1,7 +1,7 @@
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
-import { aboutContent, businessInfo, values } from "@/lib/content";
+import { aboutContent, businessInfo, featuredCards, values } from "@/lib/content";
 
 export default function AboutPage() {
   return (
@@ -29,6 +29,34 @@ export default function AboutPage() {
                 </div>
                 <h2 className="text-xl font-semibold text-ink-900">{value.title}</h2>
                 <p className="text-sm leading-relaxed text-ink-600">{value.description}</p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+      <Section className="bg-ink-100/50">
+        <Container>
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-500">
+                Core Services
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold text-ink-900 md:text-4xl">
+                네뷸라엑스 주요 서비스
+              </h2>
+            </div>
+            <p className="max-w-md text-sm text-ink-600">
+              클라우드, 데이터센터, 웹 구축까지 한 번에 지원합니다.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {featuredCards.map((card) => (
+              <Card key={card.title} className="space-y-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white">
+                  <card.icon className="h-6 w-6 text-ink-700" />
+                </div>
+                <h3 className="text-lg font-semibold text-ink-900">{card.title}</h3>
+                <p className="text-sm leading-relaxed text-ink-600">{card.description}</p>
               </Card>
             ))}
           </div>

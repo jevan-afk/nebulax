@@ -36,6 +36,80 @@ export default function ContactPage() {
           </div>
         </Container>
       </Section>
+      <Section>
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <Card className="space-y-6">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-500">
+                  Contact Form
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold text-ink-900">상담 문의</h2>
+                <p className="mt-2 text-sm text-ink-600">
+                  서비스 상담과 기술 지원 문의를 남겨주시면 빠르게 연락드리겠습니다.
+                </p>
+              </div>
+              <form className="grid gap-4">
+                <div className="grid gap-4 md:grid-cols-2">
+                  <label className="flex flex-col gap-2 text-sm text-ink-600">
+                    이름
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="담당자 이름"
+                      className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
+                      required
+                    />
+                  </label>
+                  <label className="flex flex-col gap-2 text-sm text-ink-600">
+                    연락처
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="연락 가능한 번호"
+                      className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
+                      required
+                    />
+                  </label>
+                </div>
+                <label className="flex flex-col gap-2 text-sm text-ink-600">
+                  이메일
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="name@company.com"
+                    className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
+                    required
+                  />
+                </label>
+                <label className="flex flex-col gap-2 text-sm text-ink-600">
+                  문의 내용
+                  <textarea
+                    name="message"
+                    rows={5}
+                    placeholder="필요한 서비스, 일정, 예산 등을 작성해주세요."
+                    className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
+                    required
+                  />
+                </label>
+                <label className="flex items-start gap-2 text-xs text-ink-500">
+                  <input type="checkbox" required className="mt-1 h-4 w-4 rounded border-ink-300" />
+                  <span>개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+                <Button className="w-full">문의 보내기</Button>
+              </form>
+            </Card>
+            <div className="space-y-4 rounded-3xl border border-ink-100 bg-ink-100/60 p-8">
+              <h3 className="text-xl font-semibold text-ink-900">빠른 연결</h3>
+              <p className="text-sm leading-relaxed text-ink-600">
+                긴급 장애 대응이나 빠른 문의가 필요한 경우 대표번호로 연락해주세요.
+              </p>
+              <div className="text-sm font-semibold text-ink-900">대표번호: 1644-2781</div>
+              <div className="text-sm text-ink-600">이메일: contact@nebulax.digital</div>
+            </div>
+          </div>
+        </Container>
+      </Section>
       <Section id="support">
         <Container>
           <div className="rounded-3xl border border-ink-100 bg-ink-100/60 p-8 md:p-10">

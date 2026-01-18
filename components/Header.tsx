@@ -103,7 +103,7 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="/services"
+              href="/services#cloud"
               className="mt-4 inline-flex items-center justify-center rounded-full bg-ink-900 px-4 py-2 text-sm font-semibold text-white"
             >
               클라우드 바로가기
