@@ -34,7 +34,12 @@ export default function ContactPage() {
       });
 
       if (!response.ok) {
-        throw new Error("요청에 실패했습니다.");
+        const errorBody = await response.json().catch(() => null);
+        const errorMessage =
+          typeof errorBody?.error === "string"
+            ? errorBody.error
+            : "문의 접수에 실패했습니다. 잠시 후 다시 시도해주세요.";
+        throw new Error(errorMessage);
       }
 
       setStatus("success");
@@ -42,7 +47,11 @@ export default function ContactPage() {
       event.currentTarget.reset();
     } catch (error) {
       setStatus("error");
-      setMessage("문의 접수에 실패했습니다. 잠시 후 다시 시도해주세요.");
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "문의 접수에 실패했습니다. 잠시 후 다시 시도해주세요."
+      );
     }
   };
 
