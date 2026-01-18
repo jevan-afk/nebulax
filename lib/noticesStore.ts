@@ -3,6 +3,7 @@ import path from "path";
 
 export interface Notice {
   id: string;
+  slug: string;
   title: string;
   tag: string;
   date: string;
@@ -18,6 +19,7 @@ const dataFile = path.join(dataDir, "notices.json");
 
 const seedNotices: Omit<Notice, "id" | "createdAt">[] = [
   {
+    slug: "cloud-operations-guide",
     title: "클라우드 서비스 운영 가이드 안내",
     tag: "공지",
     date: "2024.10.18",
@@ -27,6 +29,7 @@ const seedNotices: Omit<Notice, "id" | "createdAt">[] = [
       "NebulaX 클라우드 운영 가이드를 업데이트했습니다. 모니터링 기준, 장애 대응 프로세스, 확장 요청 방법을 포함하고 있으니 참고 부탁드립니다."
   },
   {
+    slug: "idc-maintenance-schedule",
     title: "IDC 정기 점검 일정 안내",
     tag: "안내",
     date: "2024.09.30",
@@ -36,6 +39,7 @@ const seedNotices: Omit<Notice, "id" | "createdAt">[] = [
       "안정적인 서비스 제공을 위해 IDC 정기 점검을 진행합니다. 점검 기간 중 일부 서비스 접근이 제한될 수 있으니 사전 확인 부탁드립니다."
   },
   {
+    slug: "support-channel-update",
     title: "기술 지원 채널 업데이트",
     tag: "업데이트",
     date: "2024.09.12",
@@ -45,6 +49,25 @@ const seedNotices: Omit<Notice, "id" | "createdAt">[] = [
       "기존 이메일/전화 외에 전용 문의 채널을 추가했습니다. 긴급 대응이 필요한 경우 대표번호로 연락해주세요."
   }
 ];
+
+function slugify(value: string) {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
+function uniqueSlug(base: string, existing: Set<string>) {
+  let slug = base || `notice-${Date.now()}`;
+  let counter = 1;
+  while (existing.has(slug)) {
+    slug = `${base}-${counter}`;
+    counter += 1;
+  }
+  return slug;
+}
 
 async function ensureDataFile() {
   await fs.mkdir(dataDir, { recursive: true });
@@ -82,15 +105,18 @@ export async function listNotices() {
   );
 }
 
-export async function getNotice(id: string) {
+export async function getNoticeBySlug(slug: string) {
   const notices = await readAll();
-  return notices.find((notice) => notice.id === id) ?? null;
+  return notices.find((notice) => notice.slug === slug) ?? null;
 }
 
-export async function createNotice(data: Omit<Notice, "id" | "createdAt">) {
+export async function createNotice(data: Omit<Notice, "id" | "createdAt" | "slug">) {
   const notices = await readAll();
+  const existing = new Set(notices.map((notice) => notice.slug));
+  const slug = uniqueSlug(slugify(data.title), existing);
   const notice: Notice = {
     ...data,
+    slug,
     id: crypto.randomUUID(),
     createdAt: new Date().toISOString()
   };

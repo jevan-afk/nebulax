@@ -35,14 +35,14 @@ export default async function NoticesPage() {
                 <p className="text-sm leading-relaxed text-ink-600">{notices[0].summary}</p>
                 <div className="mt-auto flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-ink-500">
                   <span>{notices[0].author}</span>
-                  <Button href={`/notices/${notices[0].id}`} variant="secondary">
+                  <Button href={`/notices/${notices[0].slug}`} variant="secondary">
                     상세 보기
                   </Button>
                 </div>
               </Card>
               <div className="grid gap-4">
                 {notices.slice(1).map((notice) => (
-                  <Link key={notice.id} href={`/notices/${notice.id}`} className="block">
+                  <Link key={notice.id} href={`/notices/${notice.slug}`} className="block">
                     <Card className="flex h-full flex-col gap-3">
                       <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-ink-500">
                         <span>{notice.tag}</span>

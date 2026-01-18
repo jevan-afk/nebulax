@@ -27,9 +27,9 @@ async function deliverInquiry(payload: {
   }
 
   const resendKey = process.env.RESEND_API_KEY;
-  const resendTo = process.env.RESEND_TO;
-  if (resendKey && resendTo) {
-    const from = process.env.RESEND_FROM ?? "NebulaX <dl_corporate@nebulaxcorp.com>";
+  const resendTo = process.env.RESEND_TO ?? "dl_notice@nebulax.digital";
+  if (resendKey) {
+    const from = process.env.RESEND_FROM ?? "NebulaX <dl_notice@nebulax.digital>";
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {

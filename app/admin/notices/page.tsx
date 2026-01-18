@@ -34,6 +34,18 @@ export default function NoticeAdminPage() {
     [formState]
   );
 
+  const previewSlug = useMemo(() => {
+    if (!formState.title) {
+      return "notice-slug";
+    }
+    return formState.title
+      .trim()
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
+  }, [formState.title]);
+
   const loadNotices = async () => {
     try {
       const response = await fetch("/api/notices");
@@ -242,6 +254,7 @@ export default function NoticeAdminPage() {
                   <p className="mt-2 text-sm leading-relaxed text-ink-600">
                     {previewNotice.summary}
                   </p>
+                  <p className="mt-3 text-xs text-ink-400">/notices/{previewSlug}</p>
                 </div>
                 <div className="rounded-2xl border border-ink-100 p-4 text-sm text-ink-600">
                   {previewNotice.content}
