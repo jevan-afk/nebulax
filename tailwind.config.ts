@@ -26,7 +26,13 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ["var(--font-noto)", "var(--font-inter)", "system-ui", "sans-serif"]
+        sans: [
+          "Pretendard",
+          "var(--font-noto)",
+          "var(--font-inter)",
+          "system-ui",
+          "sans-serif"
+        ]
       },
       borderRadius: {
         xl: "1.25rem"
