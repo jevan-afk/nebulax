@@ -283,7 +283,7 @@ export const globalNetwork = {
 export const ctaContent = {
   title: "지금 NebulaX와 함께 안정적인 인프라를 구축하세요.",
   description: "클라우드부터 데이터센터, 웹 구축까지 필요한 모든 영역을 지원합니다.",
-  primary: "서비스 상담하기",
+  primary: "서비스 살펴보기",
   secondary: "문의하기",
   icon: ArrowUpRight
 };
