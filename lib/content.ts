@@ -117,6 +117,8 @@ export const globalNetwork = {
   ]
 };
 
+export const stats = globalNetwork.stats;
+
 export const ctaContent = {
   title: "클라우드 서비스를 찾으시나요?",
   description: "지금 NebulaX와 함께 합리적인 비용과 안정적인 인프라를 경험해보세요.",
