@@ -1,10 +1,72 @@
+"use client";
+
+import { useState } from "react";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
 import { Button } from "@/components/Button";
 import { contactContent, servicesDetailed } from "@/lib/content";
 
+interface FormState {
+  name: string;
+  phone: string;
+  email: string;
+  serviceType: string;
+  message: string;
+  consent: boolean;
+}
+
 export default function ContactPage() {
+  const [formState, setFormState] = useState<FormState>({
+    name: "",
+    phone: "",
+    email: "",
+    serviceType: "",
+    message: "",
+    consent: false
+  });
+  const [statusMessage, setStatusMessage] = useState<string>("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value, type } = event.target;
+    setFormState((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? (event.target as HTMLInputElement).checked : value
+    }));
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setStatusMessage("");
+
+    const res = await fetch("/api/inquiries", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formState)
+    });
+
+    if (!res.ok) {
+      setStatusMessage("문의 접수에 실패했습니다. 입력 내용을 확인해주세요.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    setStatusMessage("문의가 접수되었습니다. 빠르게 답변드리겠습니다.");
+    setFormState({
+      name: "",
+      phone: "",
+      email: "",
+      serviceType: "",
+      message: "",
+      consent: false
+    });
+    setIsSubmitting(false);
+  };
+
   return (
     <>
       <Section className="pt-28">
@@ -70,7 +132,7 @@ export default function ContactPage() {
                   서비스 상담과 기술 지원 문의를 남겨주시면 빠르게 연락드리겠습니다.
                 </p>
               </div>
-              <form className="grid gap-4">
+              <form className="grid gap-4" onSubmit={handleSubmit}>
                 <div className="grid gap-4 md:grid-cols-2">
                   <label className="flex flex-col gap-2 text-sm text-ink-600">
                     이름
@@ -78,6 +140,8 @@ export default function ContactPage() {
                       type="text"
                       name="name"
                       placeholder="담당자 이름"
+                      value={formState.name}
+                      onChange={handleChange}
                       className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
                       required
                     />
@@ -88,6 +152,8 @@ export default function ContactPage() {
                       type="tel"
                       name="phone"
                       placeholder="연락 가능한 번호"
+                      value={formState.phone}
+                      onChange={handleChange}
                       className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
                       required
                     />
@@ -99,6 +165,8 @@ export default function ContactPage() {
                     type="email"
                     name="email"
                     placeholder="name@company.com"
+                    value={formState.email}
+                    onChange={handleChange}
                     className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
                     required
                   />
@@ -107,6 +175,8 @@ export default function ContactPage() {
                   문의 유형
                   <select
                     name="serviceType"
+                    value={formState.serviceType}
+                    onChange={handleChange}
                     className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
                     required
                   >
@@ -124,15 +194,27 @@ export default function ContactPage() {
                     name="message"
                     rows={5}
                     placeholder="필요한 서비스, 일정, 예산 등을 작성해주세요."
+                    value={formState.message}
+                    onChange={handleChange}
                     className="rounded-2xl border border-ink-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-ink-400"
                     required
                   />
                 </label>
                 <label className="flex items-start gap-2 text-xs text-ink-500">
-                  <input type="checkbox" required className="mt-1 h-4 w-4 rounded border-ink-300" />
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    checked={formState.consent}
+                    onChange={handleChange}
+                    className="mt-1 h-4 w-4 rounded border-ink-300"
+                    required
+                  />
                   <span>개인정보 수집 및 이용에 동의합니다.</span>
                 </label>
-                <Button className="w-full">문의 보내기</Button>
+                {statusMessage ? <p className="text-sm text-ink-500">{statusMessage}</p> : null}
+                <Button className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? "전송 중..." : "문의 보내기"}
+                </Button>
               </form>
             </Card>
             <div className="space-y-4 rounded-3xl border border-ink-100 bg-white p-8 shadow-card" id="support">
@@ -143,6 +225,9 @@ export default function ContactPage() {
               </p>
               <div className="text-sm font-semibold text-ink-900">대표번호: 1644-2781</div>
               <div className="text-sm text-ink-600">이메일: contact@nebulax.digital</div>
+              <Button href="/admin/inquiries" variant="secondary" className="w-full">
+                문의 관리로 이동
+              </Button>
             </div>
           </div>
         </Container>
